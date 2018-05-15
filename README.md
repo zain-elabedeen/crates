@@ -1,35 +1,25 @@
 # Crates
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/crates`. To experiment with that code, run `bin/console` for an interactive prompt.
+The app connect to currency layer API and return exchange rates base on options 
 
-TODO: Delete this and the text above, and describe your gem
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'crates'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install crates
+## Run (development enviroment)
+ The CLI is build using thor Gem to run using bundle
+ 
+ bundle exec bin/crates send_rates
 
 ## Usage
+ for help run    
+    bundle exec bin/crates help send_rates
 
-TODO: Write usage instructions here
+ get rates againest multiple currencies
+    bundle exec bin/crates send_rates --base-currency="USD" --target-currencies="EUR","GBP"
+  
+ get best rates in the last 7 days
+     bundle exec bin/crates send_rates -b --base-currency="USD" --target-currencies="EUR"
 
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/zain-elabedeen/crates.
+## TODOs
+    - send rates to slack or sms(twilio)
+    - add tests
+    - enhance options parsing and validation
+    - move faraday configuration to a new connection class
+    - Gem build and install configuration
