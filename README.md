@@ -3,7 +3,7 @@
 The app connect to currency layer API and return exchange rates base on options 
 
 ## Run (development enviroment)
- The CLI is build using thor Gem to run using bundle
+ The CLI is build using thor Gem, run using bundle
  
  bundle exec bin/crates send_rates
 
